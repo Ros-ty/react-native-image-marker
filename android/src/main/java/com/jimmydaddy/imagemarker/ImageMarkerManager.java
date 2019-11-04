@@ -98,10 +98,8 @@ public class ImageMarkerManager extends ReactContextBaseJavaModule {
         String major = getStringSafe("major", ReactNativeVersion.VERSION);
         String minor = getStringSafe("minor", ReactNativeVersion.VERSION);
         String patch = getStringSafe("patch", ReactNativeVersion.VERSION);
-        if (Integer.valueOf(major) >= 0 && Integer.valueOf(minor) >= 60 && Integer.valueOf(patch) >= 0 ) {
             ImagePipelineConfig config = ImagePipelineConfig.newBuilder(this.context).experiment().setMaxBitmapSize(maxSize).build();
             Fresco.initialize(this.context, config);
-        }
     }
 
     private void markImage(
